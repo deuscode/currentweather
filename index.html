@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
   <!-- Basic Page Needs
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <meta charset="utf-8">
-  <title>Weather Webapp</title>
+  <title>Weather Machine</title>
   <meta name="description" content="Simple weather webapp to get your weather needs :)">
   <meta name="author" content="Peter Kay">
 
@@ -29,37 +30,75 @@
   <link rel="icon" type="image/png" href="images/favicon.png">
 
 </head>
+
 <body>
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="container">
     <div class="row">
-      <div class="one-half column offset-by-three" style="margin-top: 25%">
+      <div class="one-half column offset-by-three" style="margin-top: 15%">
         <center>
-        <h4>Weather Web App</h4>
-        <h5 id="location">getting your location...</h5>
-        <h6 id="currenttemp">...</h6>
-        <a href="#" id="toggle">Toggle Unit</a>
-        <p id="temp-highlow">...</p>
-        <p id="currentWeather">...</p></center>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
-          magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo 
-          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
-        </p>
+          <h4>Weather Machine</h4>
+          <h5 id="location">getting your location...</h5>
+          <h6 id="currenttemp">...</h6>
+          <a href="#" id="toggle">Toggle C/F</a>
+          <h6 id="temp-highlow">...</h6>
+          <h6 id="currentWeather">...</h6>
+        </center>
       </div>
     </div>
-  </div>
+    <div class="row">
+      <div class="one-half column offset-by-three" style="margin-top: 5%">
+        <center>
+          <h4 id="forecastdays">Five-Day Forecast</h4>
+        </center>
+      </div>
+    </div>
+    <div class="row">
+      <center>
+        <div class="twelve columns offset-by-one">
+          <div class="two columns">
+            <h6 id="dayone"></h6>
+            <img id="dayoneIcon"></br>
+            <h6 id="dayone-highlow"></h6>
+            <h6 id="dayone-weather"></h6>
+          </div>
+          <div class="two columns">
+            <h6 id="daytwo"></h6>
+            <img id="daytwoIcon"></br>
+            <h6 id="daytwo-highlow"></h6>
+            <h6 id="daytwo-weather"></h6>
+          </div>
+          <div class="two columns">
+            <h6 id="daythree"></h6>
+            <img id="daythreeIcon"></br>
+            <h6 id="daythree-highlow"></h6>
+            <h6 id="daythree-weather"></h6>
+          </div>
+          <div class="two columns">
+            <h6 id="dayfour"></h6>
+            <img id="dayfourIcon"></br>
+            <h6 id="dayfour-highlow"></h6>
+            <h6 id="dayfour-weather"></h6>
+          </div>
+          <div class="two columns">
+            <h6 id="dayfive"></h6>
+            <img id="dayfiveIcon"></br>
+            <h6 id="dayfive-highlow"></h6>
+            <h6 id="dayfive-weather"></h6>
+          </div>
+      </center>
+      </div>
 
-<!-- End Document
+
+      <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <!-- JQuery 3.x CDN -->
-    <script
-			  src="https://code.jquery.com/jquery-3.2.1.min.js"
-			  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-			  crossorigin="anonymous"></script>
-    <!-- My Javascript -->
-    <script src="script.js"></script>
+      <!-- JQuery 3.x CDN -->
+      <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+      <!-- My Javascript -->
+      <script src="script.js"></script>
 </body>
+
 </html>
