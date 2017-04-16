@@ -16,7 +16,8 @@
 
   <!-- FONT
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Exo" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Exo|Russo+One" rel="stylesheet"> 
 
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -31,34 +32,37 @@
 
 </head>
 
-<body>
+<body onload="date_time()">
 
   <!-- Primary Page Layout
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="float" style="margin-top: 0.5%; margin-left:0.7%">
+    <span id="date_time" class="three columns animated flipInX"></span>
   <div class="container">
     <div class="row">
-      <div class="one-half column offset-by-three" style="margin-top: 15%">
+      <div class="one-half column offset-by-three" style="margin-top: 5%">
         <center>
-          <h4>Weather Machine</h4>
-          <h5 id="location">getting your location...</h5>
-          <h6 id="currenttemp">...</h6>
-          <a href="#" id="toggle">Toggle C/F</a>
-          <h6 id="temp-highlow">...</h6>
-          <h6 id="currentWeather">...</h6>
+          <h4 id="appname" class="animated fadeInDown">Weather Machine</h4>
+            <div id="box-todayweather" class="animated bounceIn">
+            <h5 id="location">getting your location...</h5>
+            <h6 id="currenttemp">...</h6>
+            <h6 id="temp-highlow">...</h6>
+            <h6 id="currentWeather">...</h6>
+            </div>
         </center>
       </div>
     </div>
     <div class="row">
       <div class="one-half column offset-by-three" style="margin-top: 5%">
         <center>
-          <h4 id="forecastdays">Five-Day Forecast</h4>
+          <h4 id="forecastdays" class="animated flipInX">Five-Day Forecast</h4>
         </center>
       </div>
     </div>
     <div class="row">
       <center>
-        <div class="twelve columns offset-by-one">
-          <div class="two columns">
+        <div class="twelve columns animated fadeInUp" id="box-forecast">
+          <div class="two columns offset-by-one">
             <h6 id="dayone"></h6>
             <img id="dayoneIcon"></br>
             <h6 id="dayone-highlow"></h6>
@@ -89,8 +93,13 @@
             <h6 id="dayfive-weather"></h6>
           </div>
       </center>
+      <a href="#" id="toggle" class="animated flipInY">Toggle C/F</a>
       </div>
+</div>
+      
 
+      <video id="backgroundvid" class="video animated fadeIn" autoplay="autoplay" loop="loop" muted="" width="300" height="150">
+        <source src="video/earthrotate.mp4" type="video/mp4"/></video>
 
       <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -99,6 +108,7 @@
         crossorigin="anonymous"></script>
       <!-- My Javascript -->
       <script src="script.js"></script>
+      
 </body>
 
 </html>

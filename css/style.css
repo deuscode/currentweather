@@ -1,0 +1,86 @@
+html,
+body {
+    height: 100%;
+    background-color: rgb(15,27,38, 1); 
+}
+#appname {
+    background-color: rgb(15,27,38, 0.4);  
+    border-radius: 25px;
+    color: #F2F0D8;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    animation-duration: 2s;
+    animation-delay: .5s;
+    z-index: 2;
+}
+#box-todayweather {
+    background-color: rgb(15,27,38, 0.4);  
+    border-radius: 25px;
+    color: #F2F0D8;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: -50px;
+    padding-right: -50px;
+    animation-duration: 1.5s;
+    animation-delay: 2s;
+    z-index: 2;
+}
+#box-forecast {
+    background-color: rgb(15,27,38, 0.4);  
+    border-radius: 25px;
+    color: #F2F0D8;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: -50px;
+    padding-right: -50px;
+    animation-duration: 1s;
+    animation-delay: .5s;
+    z-index: 2;
+}
+#forecastdays {
+    background-color: rgb(15,27,38, 0.4);  
+    border-radius: 25px;
+    color: #F2F0D8;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: -50px;
+    padding-right: -50px;
+    animation-duration: 2s;
+    animation-delay: .5s;
+    z-index: 2;
+}
+#toggle {
+    position: relative;
+    animation-duration: 2s;
+    animation-delay: 1.5s;
+    z-index: 2;
+}
+#date_time {
+    position: relative;
+    animation-duration: 3s;
+    animation-delay: 2s;
+    z-index: 2;
+    color: #00FF55;
+    font: bold;
+    font-family: 'Exo', sans-serif;
+    font-family: 'Russo One', sans-serif;
+    opacity: 0.8;
+}
+.video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    animation-duration: 7s;
+    animation-delay: .5s;
+            
+}
+
+

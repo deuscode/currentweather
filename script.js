@@ -1,23 +1,46 @@
-var API_KEY = "a527766960d7d37544528f585a1d3885";
+var API_KEY = "";
+
 var ctemp = false;
+
 var weatherData;
 var forecastFive;
+
 var day = new Date();
 var today = day.getDay();
-var weekday = new Array(7);
-weekday[0] = "Sunday";
-weekday[1] = "Monday";
-weekday[2] = "Tuesday";
-weekday[3] = "Wednesday";
-weekday[4] = "Thursday";
-weekday[5] = "Friday";
-weekday[6] = "Saturday";
+
+var weekday = new Array('Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday');
+var months = new Array('January', 'February', 'March', 'April', 'May', 'June', 'Jully', 'August', 'September',
+    'October', 'November', 'December');
+
 var forecastDayOne = today + 1;
 var forecastDayTwo = today + 2;
-console.log(dayFinder(forecastDayTwo));
 var forecastDayThree = today + 3;
 var forecastDayFour = today + 4;
 var forecastDayFive = today + 5;
+
+function date_time() {
+    date = new Date;
+    year = date.getFullYear();
+    month = date.getMonth();
+    d = date.getDate();
+    day = date.getDay();
+    h = date.getHours();
+    if (h < 10) {
+        h = "0" + h;
+    }
+    m = date.getMinutes();
+    if (m < 10) {
+        m = "0" + m;
+    }
+    s = date.getSeconds();
+    if (s < 10) {
+        s = "0" + s;
+    }
+    result = '' + weekday[day] + ' ' + months[month] + ' ' + d + ' ' + year + ' ' + h + ':' + m + ':' + s;
+    document.getElementById('date_time').innerHTML = result;
+    var t = setTimeout(date_time, '1000');
+    return true;
+}
 
 function dayFinder(currentDay) {
     var n = currentDay;
@@ -44,12 +67,12 @@ function renderCurrent(weatherData, ctemp) {
 
     $('#location').html(currentLocation);
     $('#location').append(", " + countryCode);
-    $('#currenttemp').html(currentTemp);
+    $('#currenttemp').html("Now: " + currentTemp);
     $('#currentWeather').html(currentWeather);
     $('#temp-highlow').html(high + " / " + low);
 
     var iconURL = "http://openweathermap.org/img/w/" + icon + ".png";
-    $('#currenttemp').append(' <img src="' + iconURL + '">')
+    $('#currenttemp').prepend(' <img src="' + iconURL + '"> <br>')
 }
 
 function renderFive(forecastFive, ctemp) {
@@ -85,7 +108,7 @@ function renderFive(forecastFive, ctemp) {
     $('#dayone-weather').html(dayOneWeather);
     var dayOneIconURL = "http://openweathermap.org/img/w/" + dayOneIcon + ".png";
     $('#dayoneIcon').html('<img src="' + dayOneIconURL + '">');
-    
+
     //Day Two - Data Pass to HTML
     $('#daytwo').html(weekday[dayFinder(forecastDayTwo)]);
     $('#daytwo-highlow').html(dayTwoHigh + " / " + dayTwoLow);
@@ -117,7 +140,6 @@ function renderFive(forecastFive, ctemp) {
 }
 
 $(document).ready(function () {
-
     var locationData;
     $.getJSON('http://ipinfo.io', function (ipdata) {
         console.log("assigning the location data...")
@@ -135,7 +157,7 @@ $(document).ready(function () {
                     renderCurrent(weatherData, ctemp);
                     renderFive(forecastFive, ctemp);
                     event.preventDefault();
-                    
+
                 });
             });
 
@@ -145,7 +167,7 @@ $(document).ready(function () {
                 console.log(forecastFive);
                 renderFive(forecastFive, ctemp);
 
-                
+
 
             });
     });
