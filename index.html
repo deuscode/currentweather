@@ -17,7 +17,7 @@
   <!-- FONT
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link href="https://fonts.googleapis.com/css?family=Exo" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Exo|Russo+One" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css?family=Exo|Russo+One" rel="stylesheet">
 
   <!-- CSS
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -26,9 +26,6 @@
   <link rel="stylesheet" href="css/animate.css">
   <link rel="stylesheet" href="css/style.css">
 
-  <!-- Favicon
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
-  <link rel="icon" type="image/png" href="images/favicon.png">
 
 </head>
 
@@ -38,68 +35,73 @@
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <div class="float" style="margin-top: 0.5%; margin-left:0.7%">
     <span id="date_time" class="three columns animated flipInX"></span>
-  <div class="container">
-    <div class="row">
-      <div class="one-half column offset-by-three" style="margin-top: 5%">
-        <center>
-          <h4 id="appname" class="animated fadeInDown">Weather Machine</h4>
+    <div class="container">
+      <div class="row">
+        <div class="one-half column offset-by-three" style="margin-top: 5%">
+          <center>
+            <h4 id="appname" class="animated fadeInDown">Weather Machine</h4>
             <div id="box-todayweather" class="animated bounceIn">
-            <h5 id="location">getting your location...</h5>
-            <h6 id="currenttemp">...</h6>
-            <h6 id="temp-highlow">...</h6>
-            <h6 id="currentWeather">...</h6>
+              <h5 id="location">getting your location...</h5>
+              <h6 id="currenttemp">...</h6>
+              <h6 id="temp-highlow">...</h6>
+              <h6 id="currentWeather">...</h6>
+            </div>
+          </center>
+        </div>
+      </div>
+      <div class="row">
+        <div class="one-half column offset-by-three" style="margin-top: 5%">
+          <center>
+            <h4 id="forecastdays" class="animated flipInX">Five-Day Forecast</h4>
+          </center>
+        </div>
+      </div>
+      <div class="row">
+        <center>
+          <div class="twelve columns animated fadeInUp" id="box-forecast">
+            <div class="two columns offset-by-one">
+              <h6 id="dayone"></h6>
+              <img id="dayoneIcon"></br>
+              <h6 id="dayone-highlow"></h6>
+              <h6 id="dayone-weather"></h6>
+            </div>
+            <div class="two columns">
+              <h6 id="daytwo"></h6>
+              <img id="daytwoIcon"></br>
+              <h6 id="daytwo-highlow"></h6>
+              <h6 id="daytwo-weather"></h6>
+            </div>
+            <div class="two columns">
+              <h6 id="daythree"></h6>
+              <img id="daythreeIcon"></br>
+              <h6 id="daythree-highlow"></h6>
+              <h6 id="daythree-weather"></h6>
+            </div>
+            <div class="two columns">
+              <h6 id="dayfour"></h6>
+              <img id="dayfourIcon"></br>
+              <h6 id="dayfour-highlow"></h6>
+              <h6 id="dayfour-weather"></h6>
+            </div>
+            <div class="two columns">
+              <h6 id="dayfive"></h6>
+              <img id="dayfiveIcon"></br>
+              <h6 id="dayfive-highlow"></h6>
+              <h6 id="dayfive-weather"></h6>
             </div>
         </center>
+        <a href="#" id="toggle" class="animated flipInY">Toggle C/F</a>
+        </div>
       </div>
-    </div>
-    <div class="row">
-      <div class="one-half column offset-by-three" style="margin-top: 5%">
-        <center>
-          <h4 id="forecastdays" class="animated flipInX">Five-Day Forecast</h4>
-        </center>
-      </div>
-    </div>
-    <div class="row">
-      <center>
-        <div class="twelve columns animated fadeInUp" id="box-forecast">
-          <div class="two columns offset-by-one">
-            <h6 id="dayone"></h6>
-            <img id="dayoneIcon"></br>
-            <h6 id="dayone-highlow"></h6>
-            <h6 id="dayone-weather"></h6>
-          </div>
-          <div class="two columns">
-            <h6 id="daytwo"></h6>
-            <img id="daytwoIcon"></br>
-            <h6 id="daytwo-highlow"></h6>
-            <h6 id="daytwo-weather"></h6>
-          </div>
-          <div class="two columns">
-            <h6 id="daythree"></h6>
-            <img id="daythreeIcon"></br>
-            <h6 id="daythree-highlow"></h6>
-            <h6 id="daythree-weather"></h6>
-          </div>
-          <div class="two columns">
-            <h6 id="dayfour"></h6>
-            <img id="dayfourIcon"></br>
-            <h6 id="dayfour-highlow"></h6>
-            <h6 id="dayfour-weather"></h6>
-          </div>
-          <div class="two columns">
-            <h6 id="dayfive"></h6>
-            <img id="dayfiveIcon"></br>
-            <h6 id="dayfive-highlow"></h6>
-            <h6 id="dayfive-weather"></h6>
-          </div>
-      </center>
-      <a href="#" id="toggle" class="animated flipInY">Toggle C/F</a>
-      </div>
-</div>
-      
+      <footer class="four columns animated flipInX" id="footer">
+        <h6>built by <a href="https://github.com/deuscode" target="_blank" style="display: inline">peter kay</a></h6>
+        <h6>weather API by <a href="https://openweathermap.org/api" target="_blank" style="display: inline">openweathermap.org</a></h6>
+      </footer>
+
 
       <video id="backgroundvid" class="video animated fadeIn" autoplay="autoplay" loop="loop" muted="" width="300" height="150">
-        <source src="video/earthrotate.mp4" type="video/mp4"/></video>
+        <source src="video/earthrotate.mp4" type="video/mp4" />
+      </video>
 
       <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
@@ -108,7 +110,7 @@
         crossorigin="anonymous"></script>
       <!-- My Javascript -->
       <script src="script.js"></script>
-      
+
 </body>
 
 </html>

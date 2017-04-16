@@ -1,4 +1,4 @@
-var API_KEY = "";
+var API_KEY = "571a14da18d28e6c418ad8e6d910edeb";
 
 var ctemp = false;
 
