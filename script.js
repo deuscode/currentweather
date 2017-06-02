@@ -1,5 +1,4 @@
-var API_KEY = "571a14da18d28e6c418ad8e6d910edeb";
-
+// set global variables
 var ctemp = false;
 
 var weatherData;
@@ -18,6 +17,7 @@ var forecastDayThree = today + 3;
 var forecastDayFour = today + 4;
 var forecastDayFive = today + 5;
 
+// get date and time
 function date_time() {
     date = new Date;
     year = date.getFullYear();
@@ -42,6 +42,7 @@ function date_time() {
     return true;
 }
 
+// get current day
 function dayFinder(currentDay) {
     var n = currentDay;
     if (n > 6) {
@@ -51,6 +52,7 @@ function dayFinder(currentDay) {
     }
 }
 
+// change temp F/C
 function displayTemp(ftemp, ctemp) {
     if (ctemp) return Math.round((ftemp - 32) * (5 / 9)) + " C";
     return Math.round(ftemp) + " F";
@@ -77,28 +79,28 @@ function renderCurrent(weatherData, ctemp) {
 
 function renderFive(forecastFive, ctemp) {
     //Day One - Temp
-    var dayOneHigh = displayTemp(forecastFive.list[0].temp.max, ctemp);
-    var dayOneLow = displayTemp(forecastFive.list[0].temp.min, ctemp);
+    var dayOneHigh = displayTemp(forecastFive.list[0].main.temp_max, ctemp);
+    var dayOneLow = displayTemp(forecastFive.list[0].main.temp_min, ctemp);
     var dayOneWeather = forecastFive.list[0].weather[0].description;
     var dayOneIcon = forecastFive.list[0].weather[0].icon;
     //Day Two - Temp
-    var dayTwoHigh = displayTemp(forecastFive.list[1].temp.max, ctemp);
-    var dayTwoLow = displayTemp(forecastFive.list[1].temp.min, ctemp);
+    var dayTwoHigh = displayTemp(forecastFive.list[1].main.temp_max, ctemp);
+    var dayTwoLow = displayTemp(forecastFive.list[1].main.temp_min, ctemp);
     var dayTwoWeather = forecastFive.list[1].weather[0].description;
     var dayTwoIcon = forecastFive.list[1].weather[0].icon;
     //Day Three - Temp
-    var dayThreeHigh = displayTemp(forecastFive.list[2].temp.max, ctemp);
-    var dayThreeLow = displayTemp(forecastFive.list[2].temp.min, ctemp);
+    var dayThreeHigh = displayTemp(forecastFive.list[2].main.temp_max, ctemp);
+    var dayThreeLow = displayTemp(forecastFive.list[2].main.temp_min, ctemp);
     var dayThreeWeather = forecastFive.list[2].weather[0].description;
     var dayThreeIcon = forecastFive.list[2].weather[0].icon;
     //Day Four - Temp
-    var dayFourHigh = displayTemp(forecastFive.list[3].temp.max, ctemp);
-    var dayFourLow = displayTemp(forecastFive.list[3].temp.min, ctemp);
+    var dayFourHigh = displayTemp(forecastFive.list[3].main.temp_max, ctemp);
+    var dayFourLow = displayTemp(forecastFive.list[3].main.temp_min, ctemp);
     var dayFourWeather = forecastFive.list[3].weather[0].description;
     var dayFourIcon = forecastFive.list[3].weather[0].icon;
     //Day Five - Temp
-    var dayFiveHigh = displayTemp(forecastFive.list[4].temp.max, ctemp);
-    var dayFiveLow = displayTemp(forecastFive.list[4].temp.min, ctemp);
+    var dayFiveHigh = displayTemp(forecastFive.list[4].main.temp_max, ctemp);
+    var dayFiveLow = displayTemp(forecastFive.list[4].main.temp_min, ctemp);
     var dayFiveWeather = forecastFive.list[4].weather[0].description;
     var dayFiveIcon = forecastFive.list[4].weather[0].icon;
 
@@ -139,6 +141,7 @@ function renderFive(forecastFive, ctemp) {
 
 }
 
+// call JSON data
 $(document).ready(function () {
     var locationData;
     $.getJSON('http://ipinfo.io', function (ipdata) {
@@ -146,8 +149,8 @@ $(document).ready(function () {
         locationData = ipdata.loc.split(",");
         console.log("longitude & latitude: ", locationData);
 
-        $.getJSON('http://api.openweathermap.org/data/2.5/weather?units=imperial&lat=' + locationData[0] + '&lon=' +
-            locationData[1] + '&APPID=' + API_KEY, function (mainWeather) {
+        $.getJSON('https://kaypeter.com/homebase/weather/' + locationData[0] + '/' +
+            locationData[1], function (mainWeather) {
                 weatherData = mainWeather;
                 console.log(weatherData);
                 renderCurrent(weatherData, ctemp);
@@ -161,14 +164,11 @@ $(document).ready(function () {
                 });
             });
 
-        $.getJSON('http://api.openweathermap.org/data/2.5/forecast/daily?units=imperial&lat=' + locationData[0] + '&lon=' +
-            locationData[1] + '&cnt=5&APPID=' + API_KEY, function (fiveDayData) {
+        $.getJSON('https://kaypeter.com/homebase/forecast/' + locationData[0] + '/' +
+            locationData[1], function (fiveDayData) {
                 forecastFive = fiveDayData;
                 console.log(forecastFive);
                 renderFive(forecastFive, ctemp);
-
-
-
             });
     });
 
